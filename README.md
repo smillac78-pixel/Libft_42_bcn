@@ -1,4 +1,4 @@
-*Este proyecto ha sido creado como parte del currículo de 42 por smilla-c.*
+*Este proyecto ha sido creado como parte del currículo de 42 por* ***smilla-c.***
 
 # libft
 
@@ -12,27 +12,28 @@
 
 ```bash
 make
-
+```
 Esto generará la librería libft.a.
 
-Uso
+### Uso
 
 Incluye el header y enlaza la librería:
-
+```
 #include "libft.h"
-
+```
+Ejemplo de compilacion:
+```
 cc main.c -L. -lft
-
-Limpieza
-
+```
+### Limpieza
+```
 make clean
 make fclean
 make re
-
 ```
 
-Funciones incluidas
-Caracteres y cadenas
+## Funciones incluidas
+**Caracteres y cadenas:**
 
 ft_isalpha, ft_isdigit, ft_isalnum, ft_isascii, ft_isprint
 
@@ -44,17 +45,17 @@ ft_strchr, ft_strrchr, ft_strncmp, ft_strnstr
 
 ft_strdup
 
-Memoria
+**Memoria:**
 
 ft_memset, ft_bzero, ft_memcpy, ft_memmove
 
 ft_memchr, ft_memcmp, ft_calloc
 
-Conversión
+**Conversión:**
 
 ft_atoi, ft_itoa
 
-Funciones adicionales
+**Funciones adicionales:**
 
 ft_substr, ft_strjoin, ft_strtrim
 
@@ -62,7 +63,7 @@ ft_split, ft_strmapi, ft_striteri
 
 ft_putchar_fd, ft_putstr_fd, ft_putendl_fd, ft_putnbr_fd
 
-Listas enlazadas
+**Listas enlazadas:**
 
 ft_lstnew, ft_lstadd_front, ft_lstsize, ft_lstlast
 
@@ -70,13 +71,13 @@ ft_lstadd_back, ft_lstdelone, ft_lstclear
 
 ft_lstiter, ft_lstmap
 
-Recursos
+### Recursos
 
 Manuales de C (man 3)
 
 Documentación oficial de 42
 
-Uso de IA
+**Uso de IA:**
 
 La IA se ha utilizado únicamente como apoyo teórico y para la redacción de documentación.
 
