@@ -12,53 +12,44 @@
 
 #include "libft.h"
 
-static int	ft_count_word(const char *s, char c)//cuenta strings de el array
+size_t	count_words (const char *s, char c)
 {
-	int	i;
-	int	count;
-	int	in_word;
+	size_t word;
 
-	i = 0;
-	count = 0;
-	in_word = 0;
-	while (s[i])
+	word = 0;
+	while (*s)
 	{
-		if (s[i] != c && !in_word)
-		{
-			count++;
-			in_word = 1;
-		}
-		else if (s[i] == c)
-			in_word = 0;
-		i++;
+		while (*s == c)
+			s++;
+		if (*s && *s != c)
+			word++;
+		while (*s && *s != c)
+			s++;
 	}
-	return (count);
+	return (word);
 }
-
-char	**ft_split(char const *s, char c)
-//divide una cadena en un array de strings usando un separador
+char	**split(const char *s, char c)
 {
-	char	**lst;
+	char **lst;
+	size_t	i;
 	size_t	word;
-	int		i;
 
-	lst = (char **)malloc((ft_count_word(s, c) + 1) * sizeof(char *));
-	if (!s || !lst)
+	if(!s)
+		return (NULL);
+	lst = (char **)malloc(sizeof(char *)*(count_words(s, c) + 1));
+	if (!lst)
 		return (NULL);
 	i = 0;
 	while (*s)
 	{
-		while (*s == c && *s)
+		if (*s == c)
 			s++;
-		if (*s)
-		{
-			if (!ft_strchr(s, c))
-				word = ft_strlen(s);
-			else
-				word = ft_strchr(s, c) - s;
+		word = 0;
+		while (s[word] && s[word] != c)
+			word++;
+		if (word)
 			lst[i++] = ft_substr(s, 0, word);
-			s = s + word;
-		}
+		s += word;
 	}
 	lst[i] = NULL;
 	return (lst);
